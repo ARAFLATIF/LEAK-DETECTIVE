@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leak Detection Alerts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Tracker.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Water Management System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Landing Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">User Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports and Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help and Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center text-primary">Leak Detection Alerts</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h2 class="text-primary">Active Leaks</h2>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Severity</th>
+                            <th>Detection Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activeLeaks">
+                        <!-- Active leaks will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-primary">Resolved Leaks</h2>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Severity</th>
+                            <th>Detection Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resolvedLeaks">
+                        <!-- Resolved leaks will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2 class="text-primary">Severity Level Legend</h2>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Critical
+                        <span class="badge badge-danger">Red</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Moderate
+                        <span class="badge badge-warning">Yellow</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Resolved
+                        <span class="badge badge-success">Green</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2 class="text-primary">Suggested Actions</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Turn off main water supply</li>
+                    <li class="list-group-item">Contact a plumber</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2 class="text-primary">Maintenance Contacts</h2>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        John Doe (Plumber)
+                        <span>Phone: 123-456-7890, Email: johndoe@example.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Tracker.js"></script>
+</body>
+</html>
