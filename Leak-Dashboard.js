@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Sample data for water usage chart
     const ctx = document.getElementById('waterUsageChart').getContext('2d');
+    
     new Chart(ctx, {
         type: 'line',
         data: {
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Populate alerts
     const alertsList = document.getElementById('alertsList');
+    
     alerts.forEach(alert => {
         const li = document.createElement('li');
         li.className = `list-group-item list-group-item-${getSeverityClass(alert.severity)}`;
@@ -47,13 +49,28 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('weekUsage').textContent = '1,050';
     document.getElementById('monthUsage').textContent = '4,500';
 
-    // Helper function to get Bootstrap class for alert severity
-    function getSeverityClass(severity) {
-        switch(severity) {
-            case 'high': return 'danger';
-            case 'medium': return 'warning';
-            case 'low': return 'info';
-            default: return 'secondary';
-        }
-    }
+   // Helper function to get Bootstrap class for alert severity
+   function getSeverityClass(severity) {
+       switch(severity) {
+           case 'high': return 'danger';
+           case 'medium': return 'warning';
+           case 'low': return 'info';
+           default: return 'secondary';
+       }
+   }
+
+   // Back to top button functionality
+   const backToTopButton = document.getElementById('backToTop');
+
+   window.addEventListener('scroll', () => {
+       if (window.pageYOffset > 100) {
+           backToTopButton.style.display = 'block';
+       } else {
+           backToTopButton.style.display = 'none';
+       }
+   });
+
+   backToTopButton.addEventListener('click', () => {
+       window.scrollTo({ top: 0, behavior: 'smooth' });
+   });
 });
