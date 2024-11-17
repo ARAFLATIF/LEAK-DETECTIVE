@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
     // Monthly Usage Chart
     const monthlyCtx = document.getElementById('monthlyUsageChart').getContext('2d');
     new Chart(monthlyCtx, {
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-
+ 
     // Weekly Comparison Chart
     const weeklyCtx = document.getElementById('weeklyComparisonChart').getContext('2d');
     new Chart(weeklyCtx, {
@@ -56,14 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-
+ 
     // Populate Leak History Table
     const leakHistory = [
         { date: '2023-06-15', location: 'Kitchen', severity: 'Moderate', status: 'Resolved' },
         { date: '2023-06-10', location: 'Bathroom', severity: 'Minor', status: 'Resolved' },
         { date: '2023-05-28', location: 'Garden', severity: 'Critical', status: 'Resolved' }
     ];
-
+ 
     const leakHistoryTable = document.getElementById('leakHistoryTable');
     leakHistory.forEach(leak => {
         const row = document.createElement('tr');
@@ -71,8 +72,22 @@ document.addEventListener('DOMContentLoaded', function() {
             <td>${leak.date}</td>
             <td>${leak.location}</td>
             <td>${leak.severity}</td>
-            <td>${leak.status}</td>
-        `;
+            <td>${leak.status}</td>`;
         leakHistoryTable.appendChild(row);
     });
-});
+ 
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('backToTop');
+ 
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+ 
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior:'smooth' });
+    });
+ });
